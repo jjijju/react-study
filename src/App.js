@@ -1,11 +1,11 @@
 import React from 'react';
 
 function App() {
-    const name = '뤼액트';
-
-    return <div>{name === '리액트' && <h1>리액트 입니다.</h1>}</div>;
+    const name = undefined;
+    return <div>{name || '리액트'}</div>;
 }
 
-// <Fragment></Fragment> 대신 <></> 사용 가능
+// jsx 내부에서 undefined를 렌더링하는 것은 ok
+// return <div>{name}</div>
 
 export default App;
