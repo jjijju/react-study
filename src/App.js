@@ -1,14 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 function App() {
     const name = '리액트';
 
-    return (
-        <Fragment>
-            <h1>안녕 {name}</h1>
-            <h2>정상 작동?</h2>
-        </Fragment>
-    );
+    return <div>{name === '리액트' ? <h1>리액트 입니다.</h1> : <h2>리액트가 아닙니다.</h2>}</div>;
 }
 
 // <Fragment></Fragment> 대신 <></> 사용 가능
