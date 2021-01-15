@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Fragment>
+            <h1>안녕 리액트</h1>
+            <h2>정상 작동?</h2>
+        </Fragment>
+    );
 }
+
+// <Fragment></Fragment> 대신 <></> 사용 가능
 
 export default App;
