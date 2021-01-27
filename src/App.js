@@ -23,6 +23,7 @@ class App extends Component {
 				<ScrollBox ref={(ref) => (this.scrollBox = ref)} />
 				<button onClick={() => this.scrollBox.scrollToBottom()}>맨 밑으로</button>
 				<br />
+				<br />
 				<InterationSample />
 			</div>
 		);
