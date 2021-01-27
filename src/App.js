@@ -10,7 +10,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<MyComponent />
+				<MyComponent name="React" favoriteNumber={9} />
 				<br />
 				<Counter />
 				<br />
