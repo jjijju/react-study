@@ -6,6 +6,9 @@ import EventPractice from './EventPractice';
 import ValidationSample from './ValidationSample';
 import ScrollBox from './ScrollBox';
 import InterationSample from './InterationSample';
+
+// import Jsx from './02_jsx';
+// import Components from './03_component';
 class App extends Component {
 	render() {
 		return (
