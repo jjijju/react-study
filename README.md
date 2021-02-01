@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# React란?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 사용자 인터페이스를 만드는 데 사용되는 JavaScript 라이브러리
 
-## Available Scripts
+서비스의 규모가 커지고, 사용자에게 다양한 인터렉션/동적인 기능을 제공하려면 DOM 요소의 관리가 힘들뿐더러 복잡해지며 성능까지 떨어질 수 있다.
 
-In the project directory, you can run:
+이를 해결하기 위해 페이스북에서 구현한 **JavaScript 라이브러리** 입니다.
 
-### `yarn start`
+다른 프레임워크 구조(MVC, MVW 등)과 달리 **View** 만 신경씁니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+핵심 개념에는 **컴포넌트**와 **렌더링**이 있습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 컴포넌트
 
-### `yarn test`
+UI를 구성하는 단위이며, 독립적이며 재사용이 가능한 API로 수많은 기능들을 내장하고 있습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 렌더링
 
-### `yarn build`
+사용자 화면에 뷰를 보여주는 것을 말합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. 초기 렌더링
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+어느 라이브러리/프레임워크를 사용하던지 맨 처음에 어떯게 보일지를 정하는 초기 렌더링이 필요합니다.
+리액트에서는 이를 다루기 위해 **render()** 라는 함수를 사용합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+해당 함수는 컴포넌트를 정의하는 역할을 합니다. (뷰의 생김새, 작동 정보를 지닌 객체를 반환)
 
-### `yarn eject`
+**render()** 함수를 실행하면 내부에 있는 컴포넌트들도 재귀적으로 렌더링합니다. 렌더링이 끝나면 가지고 있는 정보들을 사용하여 마크업을 만들고 DOM 요소 안에 주입합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 2. 조화 과정
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+사용자 화면의 뷰를 업데이트할 때 즉, 컴포넌트에서 데이터에 변화가 있을 때
+변화에 따라 뷰가 변형되는 것처럼 보이지만, 사실은 새로운 요소로 교체됩니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+DOM에 변경을 하는 것이 아니라 새로운 데이터를 가지고 render 함수를 호출합니다.
+그리고 이전에 만들었던 컴포넌트 정보와 비교를 합니다.
+비교 후, 둘의 차이를 알아내어 DOM 트리를 업데이트 합니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# 특징
 
-## Learn More
+## 1. Virtual DOM
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### DOM 이란?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   문서 구조를 객체로 표현하는 방법
+-   트리 형태의 구조를 가지고 있음
+-   동적 UI에 최적화되어 있지 않음.
+-   HTML 자체는 정적이나 자바스크립트를 통해 동적으로 만들 수 있음.
 
-### Code Splitting
+Virtual DOM은 실제 DOM의 가벼운 사본과 비슷합니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+리액트에서 데이터가 변해서 DOM을 업데이트할 때는 아래와 같은 절차를 진행합니다.
 
-### Analyzing the Bundle Size
+1. 데이터를 업데이트 하면 전체 UI를 Virtual DOM에 리렌더링
+2. 이전 Virtual DOM에 있던 내용과 현재 내용을 비교
+3. 변경된 부분만 실제 DOM에 적용
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 2. 기타 특징
 
-### Making a Progressive Web App
+앞선 문서에서와 같이 리액트는 **View만 담당**합니다.
+프레임워크가 아닌 **라이브러리**이기 때문에 필요한 기타 기능들은 직접 구현해야 합니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+다른 개발자들이 만든 라이브러리들(axios, Fetch, 리덕스, MobX 등)을 가져와 사용할 수도 있습니다.
 
-### Advanced Configuration
+# 작업 환경
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Node.js & yarn
 
-### Deployment
+brew를 통해 node.js와 yarn을 설치
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 프로젝트 생성
 
-### `yarn build` fails to minify
+vscode의 터미널창에서
+**`yarn create-react-app <프로젝트 이름>`** 을 입력하여 프로젝트 생성
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+생성 후에 프로젝트 폴더로 이동하여 **`npm start`**로 프로젝트 서비스를 실행
+
+## ESLint
+
+문법 검사 도구로 vscode의 마켓 플레이스에서 설치
+
+## Prettier
+
+코드 스타일 자동 정리 도구로 ESLint와 동일하게 vscode의 마켓 플레이스에서 설치
+
+프로젝트의 root 경로에 **`.prettierrc`** 라는 설정 파일을 생성하여 설정 값들을 조정
+
+설정값은 내 취향에 맞춰 조정 🙂
+
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "useTabs": true,
+    "endOfLine": "auto"
+
+## Snippets
+
+자동 완성을 위해서 설치!! 너무 좋다 😍
+
+> 리액트를 다루는 기술(개정판)을 정독하면서 서술한 내용입니다.
