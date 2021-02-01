@@ -24,21 +24,21 @@ ReactDOM.render(
 마치 HTML 태그 쓰듯이 작성합니다.
 
 > **ReactDOM.render 란?**
-> 컴포넌트를 페이지에 렌더링하는 역할을 합니다. <br>
-> react-dom 모듈을 불러와 사용할 수 있습니다. <br> > **첫번째 파라미터** = 페이지에 렌더링할 내용을 JSX 형태로 작성 <br> > **두번째 파라미터** = 렌더링할 document 내부 요소를 설정
+> 컴포넌트를 페이지에 렌더링하는 역할을 합니다.
+> react-dom 모듈을 불러와 사용할 수 있습니다.
+> **첫번째 파라미터** = 페이지에 렌더링할 내용을 JSX 형태로 작성
+> **두번째 파라미터** = 렌더링할 document 내부 요소를 설정
 
-<br>
-> **React.StrictMode 란?** <br>
-> 리액트 공식문서에 따르면 **잠재적인 문제를 알아내기 위한 도구입니다. Fragment와 같이 UI를 렌더링하지 않으며, 자손들에 대한 부가적인 검사와 경고를 활성화합니다.** 라고 소개되어 있습니다. <br>
+> **React.StrictMode 란?**
+> 리액트 공식문서에 따르면 **잠재적인 문제를 알아내기 위한 도구입니다. Fragment와 같이 UI를 렌더링하지 않으며, 자손들에 대한 부가적인 검사와 경고를 활성화합니다.** 라고 소개되어 있습니다.
 > 잠재적인 문제의 종류로는 다음과 같은 것들이 있습니다.
-> 
-* [안전하지 않은 생명주기를 사용하는 컴포넌트 발견](https://ko.reactjs.org/docs/strict-mode.html#identifying-unsafe-lifecycles)
-* [레거시 문자열 ref 사용에 대한 경고](https://ko.reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
-* [권장되지 않는 findDOMNode 사용에 대한 경고](https://ko.reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
-* [예상치 못한 부작용 검사](https://ko.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects)
-* [레거시 context API 검사](https://ko.reactjs.org/docs/strict-mode.html#detecting-legacy-context-api)
-> 
-> 개발 모드에만 영향을 끼친다니, 굳이 지우고 사용할 필요는 없을 것 같다.
+
+-   [안전하지 않은 생명주기를 사용하는 컴포넌트 발견](https://ko.reactjs.org/docs/strict-mode.html#identifying-unsafe-lifecycles)
+-   [레거시 문자열 ref 사용에 대한 경고](https://ko.reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
+-   [권장되지 않는 findDOMNode 사용에 대한 경고](https://ko.reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
+-   [예상치 못한 부작용 검사](https://ko.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects)
+-   [레거시 context API 검사](https://ko.reactjs.org/docs/strict-mode.html#detecting-legacy-context-api)
+    > 개발 모드에만 영향을 끼친다니, 굳이 지우고 사용할 필요는 없을 것 같다.
 
 ## 문법
 
