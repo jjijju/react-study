@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-class ScrollBox extends Component {
+
+export default class ex02 extends Component {
 	scrollToBottom = () => {
 		const { scrollHeight, clientHeight } = this.box;
+
 		this.box.scrollTop = scrollHeight - clientHeight;
 	};
 
@@ -13,11 +15,13 @@ class ScrollBox extends Component {
 			overflow: 'auto',
 			position: 'relative',
 		};
+
 		const innerStyle = {
 			width: '100%',
 			height: '650px',
 			background: 'linear-gradient(white, black)',
 		};
+
 		return (
 			<div
 				style={style}
@@ -30,4 +34,3 @@ class ScrollBox extends Component {
 		);
 	}
 }
-export default ScrollBox;
