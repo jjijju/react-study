@@ -4,6 +4,7 @@ import Jsx from './02_jsx';
 import Components from './03_component';
 import EventHandle from './04_event_handle';
 import Ref from './05_ref';
+import Map from './06_map';
 export default class App extends Component {
 	render() {
 		return (
@@ -11,7 +12,8 @@ export default class App extends Component {
 				{/* <Jsx /> */}
 				{/* <Components /> */}
 				{/* <EventHandle /> */}
-				<Ref />
+				{/* <Ref /> */}
+				<Map />
 			</div>
 		);
 	}
